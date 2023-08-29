@@ -1,0 +1,8 @@
+header.header
+    div.header__logo
+        include ../img/icons/logo.svg
+    nav.header-navigation.nav.nav-tabs(id="myTab", role="tablist")
+        a.header-navigation__link.header-navigation__link--chat-dialog.nav-link(data-bs-target="#current-chat", id="current-chat-tab", data-bs-toggle="tab", role="tab", aria-controls="current-chat", aria-selected="true", href="#current-chat")
+        a.header-navigation__link.header-navigation__link--contacts.nav-link.active(data-bs-target="#contacts", id="contacts-tab", data-bs-toggle="tab", role="tab", aria-controls="contacts", aria-selected="true", href="#contacts") Контакты
+        a.header-navigation__link.header-navigation__link--messages.nav-link(data-bs-target="#chats", id="chats-tab", data-bs-toggle="tab", role="tab", aria-controls="chats", aria-selected="false", href="#chats") Сообщения
+        a.header-navigation__link.header-navigation__link--profile.nav-link(data-bs-target="#profile", id="profile-tab", data-bs-toggle="tab", role="tab", aria-controls="profile", aria-selected="false", href="#profile") Профиль

@@ -1,0 +1,10 @@
+section.chat-section.tab-pane.fade(id="current-chat", role="tabpanel", aria-labelledby="current-chat-tab")
+    div.chat-section-header
+        img.chat-section-header__image(src="/img/avatar_4.jpg")
+        h2.chat-section-header__name Вениамин Редакторович
+        span.chat-section-header__time Онлайн
+    include ./chatMessages.pug
+    div.chat-input
+        textarea.chat-input__textarea(placeholder="Напишите сообщение...")
+        div.chat-input__button
+            include ../img/icons/cursor.svg

@@ -1,0 +1,47 @@
+-
+  var contacts = {
+    "A": [{
+      name: "Алексей Примадонин",
+      status: "Онлайн",
+      avatar: "/images/avatar_3.jpg"
+    }],
+
+    "В": [{
+      name: "Вениамин Редакторович",
+      status: "Онлайн",
+      avatar: "/images/avatar_4.jpg"
+    }],
+
+    "Д": [{
+      name: "Джедай Падаванов",
+      status: "Был онлайн вчера",
+      avatar: "/images/avatar_2.jpg"
+    }],
+
+    "К": [{
+      name: "Кодовёнок Хекслетович",
+      status: "Был онлайн 3 часа назад",
+      avatar: "/images/avatar_1.jpg"
+    },
+    {
+      name: "Королева Верстальщина",
+      status: "Была онлайн вчера",
+      avatar: "/images/avatar_5.jpg"
+    }],
+
+    "П": [{
+      name: "Питонист Джангович",
+      status: "Был онлайн вчера",
+      avatar: "/images/avatar_6.jpg"
+    }],
+  }
+section.contacts.tab-pane.fade.show.active(id="contacts", role="tabpanel", aria-labelledby="contacts-tab")
+    h1.contacts__heading Контакты
+    input.contacts__search(placeholder="Поиск по контактам")(type="text")
+    each contactList, letter in contacts
+        h2.contacts__letter #{letter}
+        each contact in contactList
+            div.contacts-card
+                img.contacts-card__image(src=`${contact.avatar.replace("/images", "../img/")}`)(alt=`${contact.name}`)
+                h3.contacts-card__name #{contact.name}
+                span.contacts-card__status #{contact.status}

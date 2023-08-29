@@ -1,0 +1,38 @@
+/* stylelint-disable */
+
+@use "../config/utils.scss";
+@use "../config/variables.scss";
+
+.chats {
+    @include utils.sectionHeading;
+    @include utils.hideScrollbar;
+
+    &__search {
+        margin-bottom: 46px;
+    }
+
+    &-card {
+        @include utils.card;
+        grid-template-columns: 74px minmax(auto, 200px) 35px;
+        column-gap: initial;
+        padding-right: 40px;
+        margin-bottom: variables.$sizeStandard;
+
+        &__image {
+            width: 50px;
+        }
+
+        &__time {
+            font-size: variables.$sizeSmall;
+            align-self: end;
+            color: #ADB5BD;
+        }
+
+        &__status {
+            grid-column: span 2;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}

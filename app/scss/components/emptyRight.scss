@@ -1,0 +1,28 @@
+/* stylelint-disable */
+
+@use "../config/utils.scss";
+@use "../config/variables.scss";
+
+.empty-right-section {
+    flex-grow: 1;
+
+    &-card {
+        width: 240px;
+        margin: utils.pixelsToVH(426px) auto 0;
+
+        &__image {
+            margin-left: 9px;
+            border-radius: 50%;
+        }
+
+        &__heading {
+            margin: 1.125rem 0 0 2.25rem;
+            font-size: variables.$sizeStandard;
+        }
+
+        &__paragraph {
+            margin: 0;
+            font-size: variables.$sizeSmall;
+        }
+    }
+}

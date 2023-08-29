@@ -1,0 +1,9 @@
+/* stylelint-disable */
+
+@use "./config/global.scss";
+@use "./components/header.scss";
+@use "./components/contacts.scss";
+@use "./components/emptyRight.scss";
+@use "./components/chats.scss";
+@use "./components/profile.scss";
+@import "~bootstrap/scss/bootstrap";

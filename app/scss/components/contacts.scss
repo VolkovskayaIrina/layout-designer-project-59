@@ -1,0 +1,23 @@
+/* stylelint-disable */
+
+@use "../config/utils.scss";
+@use "../config/variables.scss";
+
+.contacts {
+    @include utils.sectionHeading;
+    @include utils.hideScrollbar;
+
+    &__letter {
+        margin-top: variables.$sizeLarger;
+        margin-bottom: variables.$sizeStandard;
+        color: variables.$colorSecondary;
+        font-size: variables.$sizeStandard;
+        font-weight: 400;
+    }
+
+    &-card {
+        @include utils.card;
+        grid-template-columns: 50px auto;
+        margin-bottom: variables.$sizeSmall;
+    }
+}

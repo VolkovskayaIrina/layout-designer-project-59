@@ -1,0 +1,151 @@
+/* stylelint-disable */
+
+@use "../config/utils.scss";
+@use "../config/variables.scss";
+
+.chat-section {
+    display: flex !important;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 0 !important;
+
+    &:not(.tab-pane) {
+        position: relative;
+    }
+
+    &.tab-pane {
+        @media (min-width: 800px) {
+            display: none !important;
+        }
+    }
+
+    &-header {
+        @include utils.card;
+        grid-template-columns: 50px auto;
+        margin-bottom: variables.$sizeLarger;
+    }
+}
+
+.chat-input {
+    position: absolute;
+    left: variables.$sizeLarger;
+    right: variables.$sizeLarger;
+    bottom: 0;
+    display: flex;
+    height: 89px;
+    padding: 20px variables.$sizeMedium;
+    background-color: #fff;
+    
+    @media (max-width: 800px) {
+        left: 0;
+        right: 0;
+    }
+
+    &__textarea {
+        flex-grow: 1;
+        border: none;
+        background: none;
+        appearance: none;
+        resize: none;
+
+        &::placeholder {
+            transform: translateY(50%);
+        }
+    }
+
+    &__button {
+        @include utils.placeSVG($width: 20.59px, $height: 20.59px, $color: #fff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: variables.$colorPrimary;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+
+.message-list {
+    @include utils.hideScrollbar;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 40px 90px;
+    margin: 0;
+    list-style-type: none;
+
+    @media (max-width: 800px) {
+        padding-left: variables.$sizeLarger;
+        padding-right: variables.$sizeLarger;
+    }
+
+    &-item {
+        display: flex;
+        gap: variables.$sizeStandard;
+        align-items: flex-end;
+        margin-bottom: variables.$sizeStandard;
+
+        &__image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 2px 0px #00000014;
+
+            @media (max-width: 800px) {
+                display: none;
+            }
+        }
+
+        &--you {
+            align-self: flex-end;
+        }
+
+        &-body {
+            max-width: 558px;
+            padding: variables.$sizeMedium;
+            box-sizing: border-box;
+            box-shadow: 0px 2px 2px 0px #00000014;
+            border-radius: variables.$sizeStandard;
+        }
+
+        &--sender &-body {
+            background-color: variables.$colorLight;
+        }
+
+        &--you &-body {
+            background-color: variables.$colorPrimary;
+        }
+        
+        &__author {
+            font-weight: 700;
+            font-size: variables.$sizeStandard;
+            color: variables.$colorDark;
+            margin: 0 0 4px;
+        }
+
+        &__message {
+            margin: 0 0 8px;
+            font-size: variables.$sizeStandard;
+            color: variables.$colorSecondary;
+        }
+
+        &__time {
+            display: block;
+            width: 100%;
+            padding-top: 0.5px;
+            border-top: 1px solid variables.$colorGray;
+            color: rgba($color: variables.$colorSecondary, $alpha: 0.6);
+            font-size: variables.$sizeSmall;
+        }
+
+        &--you &__message {
+            color: variables.$colorLight;
+        }
+
+        &--you &__time {
+            color: rgba($color: #fff, $alpha: 0.6);
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "stylelint ./app/scss/**/*.scss"
+  },
+  "devDependencies": {
+    "glob": "^10.3.3",
+    "gulp": "^4.0.2",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^15.10.3",
+    "stylelint-config-rational-order": "^0.0.4",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.1.0",
+    "vite": "^4.4.5",
+    "vite-plugin-pug": "^0.3.2",
+    "vite-plugin-svg-sprite": "^0.5.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.1",
+    "pug": "^3.0.2",
+    "sass": "^1.66.1",
+    "surge": "^0.23.1"
+  }
+}

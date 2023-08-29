@@ -1,0 +1,91 @@
+/* stylelint-disable */
+
+@use "../config/variables.scss";
+@use "../config/utils.scss";
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: variables.$sizeLarge;
+    box-sizing: border-box;
+    min-height: variables.$sizeExtraLarge;
+    background-color: variables.$colorPrimary;
+    padding-left: variables.$sizeStandard;
+
+    @media (max-width: 1365px) {
+        padding-right: 40px;
+    }
+
+    &__logo {
+        @include utils.placeSVG($width: 25px, $height: 40px, $color: #fff);
+
+        @media (max-width: 1365px) {
+            @include utils.placeSVG($width: 15px, $height: 25px, $color: #fff);
+            flex-grow: 1;
+        }
+    }
+
+    &-navigation {
+        display: flex;
+        gap: 32px;
+        border-bottom: none !important;
+
+        &__link {
+            $iconSize: 25px;
+
+            position: relative;
+            padding: 0 0 0 calc(variables.$sizeExtraSmall + $iconSize) !important;
+            margin: 0 !important;
+            font-size: variables.$sizeSmall !important;
+            color: variables.$colorLight !important;
+            text-decoration: none !important;
+            border: none !important;
+            background: none !important;
+            border-radius: unset !important;
+            border-top-left-radius: unset !important;
+            border-top-right-radius: unset !important;
+
+            @media (max-width: 1365px) {
+                font-size: 0 !important;
+            }
+
+            &:last-child {
+                margin-left: -1px;
+            }
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: $iconSize;
+                height: $iconSize;
+                background-size: cover;
+                background-repeat: no-repeat;
+                content: "";
+            }
+
+            &--contacts::before {
+                background-image: url("/img/icons/people.svg");
+            }
+
+            &--profile::before {
+                background-image: url("/img/icons/person.svg");
+            }
+
+            &--messages::before {
+                background-image: url("/img/icons/chat.svg");
+            }
+
+            &--chat-dialog {
+                @media (min-width: 800px) {
+                    display: none !important;
+                }
+            }
+
+            &--chat-dialog::before {
+                background-image: url("/img/icons/chat-left-text.svg");
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+/* stylelint-disable */
+
+@use "../config/utils.scss";
+@use "../config/variables.scss";
+
+.profile {
+    @include utils.sectionHeading;
+    @include utils.hideScrollbar;
+
+    &-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px variables.$sizeStandard;
+        margin: variables.$sizeLarger variables.$sizeMedium;
+
+        &__image {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+        }
+
+        &__name {
+            margin: 8px 0 variables.$sizeMedium;
+            font-size: variables.$sizeStandard;
+        }
+
+        &__info {
+            margin: 0;
+            font-size: variables.$sizeStandard;
+            color: rgba($color: #000, $alpha: 0.5);
+        }
+    }
+
+    &-list {
+        padding: 0;
+        margin: 0 40px;
+        list-style-type: none;
+
+        @media (max-width: 800px) {
+            margin: 0;
+        }
+
+        &-item {
+            display: grid;
+            grid-template-rows: 21px 21px;
+            grid-template-columns: auto 16px;
+            column-gap: 5px;
+            padding: 8px 21px 8px variables.$sizeStandard;
+
+            &__image {
+                @include utils.placeSVG($width: 16px, $height: 16px, $color: rgba(33, 37, 41, 0.5));
+                align-self: center;
+                grid-row: span 2;
+
+                & > svg {
+                    margin-top: -8px;
+                }
+            }
+
+            &__heading {
+                font-size: variables.$sizeSmall;
+                margin: 0;
+                color: rgba($color: #000, $alpha: 0.5);
+            }
+
+            &__value {
+                font-size: variables.$sizeSmall;
+            }
+        }
+    }
+}

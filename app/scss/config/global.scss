@@ -1,0 +1,78 @@
+/* stylelint-disable */
+
+@use "./variables.scss";
+@use "./utils.scss";
+
+html {
+    font-size: 16px;
+}
+
+body {
+    --bs-body-font-family: "Roboto";
+    --bs-body-bg: #{variables.$colorGray};
+
+    padding: variables.$sizeMedium;
+    margin: 0;
+    overflow: hidden;
+    line-height: 1.5;
+    color: #212529 !important;
+
+    @media (max-width: 800px) {
+        padding: 0;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700 !important;
+}
+
+.main {
+    display: flex;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: variables.$sizeStandard;
+    height: calc(100vh - variables.$sizeMedium * 2);
+    overflow: hidden;
+
+    @media (max-width: 800px) {
+        height: 100vh;
+        border-radius: 0;
+
+        & > :last-child {
+            display: none !important;
+        }
+    }
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: utils.pixelsToVW(464px);
+    border-right: 1px solid variables.$colorGray;
+
+    & > :not(:first-child) {
+        padding: 0 variables.$sizeMedium;
+    }
+    
+    @media (max-width: 800px) {
+        width: initial;
+        flex-grow: 1;
+        flex-direction: column-reverse;
+    }
+}
+
+.tab-content {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+        padding: 0 variables.$sizeMedium;
+    }
+}

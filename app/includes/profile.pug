@@ -1,0 +1,28 @@
+section.profile.tab-pane.fade(id="profile", role="tabpanel", aria-labelledby="profile-tab")
+    h1.profile__heading Профиль
+    input.profile__search(placeholder="Поиск по сообщениям")(type="text")
+    div.profile-card
+        img.profile-card__image(src="/img/avatar_1.jpg")
+        h2.profile-card__name Кодовёнок Хекслетович
+        p.profile-card__info Милый и скромный помощник начинающих разработчиков. Люблю JavaScript
+    ul.profile-list
+        li.profile-list-item
+            h3.profile-list-item__heading Страна
+            div.profile-list-item__image
+                include ../img/icons/globe.svg
+            span.profile-list-item__value Москва, Россия
+        li.profile-list-item
+            h3.profile-list-item__heading Телефон
+            div.profile-list-item__image
+                include ../img/icons/phone.svg
+            span.profile-list-item__value +7 (499) 123-45-67
+        li.profile-list-item
+            h3.profile-list-item__heading Email
+            div.profile-list-item__image
+                include ../img/icons/envelope.svg
+            span.profile-list-item__value nikita.m@hexlet.io
+        li.profile-list-item
+            h3.profile-list-item__heading Twitter
+            div.profile-list-item__image
+                include ../img/icons/people.svg
+            span.profile-list-item__value @n_mikhaylov
